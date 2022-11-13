@@ -1,0 +1,26 @@
+Design idea:
+
+Model:
+  Use a Reader class to handle txt file to return a model(an AblumSystem).
+  handle an album as a system and regard a page as a canvas. Every takeSnapshot will create a
+snapshot objet, and also every snapshot has their own ID, description, and a list of shape cloned
+from current canvas.
+  Changes: At beginning, I uses string to store all snapshot, and this time I found it is more useful
+to regard every snapshot as a object, so that I can call method to get the ID, Description, and a list
+of shapes.
+
+View:
+  Use a swingWindow class to handle graphical view. The swing window has three parts. One part to show
+description, the center part to show the shapes according the snapshots in a model, and the bottom
+part adds four buttons to control the shapes. It will paint the first snapshot of the model, and use
+resetPanel function to repaint the shape.
+  Use a webView class to create the html file for the model.
+
+Controller:
+  Use a controller class to control the buttons in the swingWindow. When clicking one button, it will
+execute corresponding content. I use an int "count" to control the order of snapshots.
+
+Main:
+  use the main file to handle the command line and create new view and controller according to command.
+
+
